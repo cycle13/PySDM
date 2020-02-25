@@ -28,7 +28,7 @@ class SpecialMethods:
 
     @staticmethod
     @numba.njit(void(int64[:], float64[:], int64[:], int64, float64[:, :], float64[:, :], float64[:], int64[:]),
-                **conf.JIT_FLAGS)
+                **{**conf.JIT_FLAGS, **{'parallel': False}})
     def coalescence(n, volume, idx, length, intensive, extensive, gamma, healthy):
         for i in prange(length - 1):
             if gamma[i] == 0:
