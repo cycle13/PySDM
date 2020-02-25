@@ -20,7 +20,7 @@ class DemoViewer:
 
         self.play = Play()
         self.step_slider = IntSlider()
-        self.fps_slider = IntSlider(min=100, max=1000, description="1000/fps")
+        self.fps_slider = IntSlider(min=1000, max=10000, description="1000/fps")
 
         self.plots = {}
         self.plots_box = Box(
@@ -37,7 +37,7 @@ class DemoViewer:
         self.products = products
 
         self.plots.clear()
-        for var in products.keys():
+        for var in reversed(list(products.keys())):
             self.plots[var] = Output()
         self.ims = {}
         self.axs = {}

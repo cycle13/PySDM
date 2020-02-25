@@ -24,9 +24,9 @@ class Setup:
     condensation_rtol_lnv = condensation.default_rtol_lnv
     condensation_rtol_thd = condensation.default_rtol_thd
 
-    grid = (25, 25)
+    grid = (64, 64)
     size = (1500 * si.metres, 1500 * si.metres)
-    n_sd_per_gridbox = 20
+    n_sd_per_gridbox = 32
     w_max = .6 * si.metres / si.seconds
 
     # output steps
@@ -61,7 +61,7 @@ class Setup:
     mpdata_iters = 2
     mpdata_iga = True
     mpdata_fct = True
-    mpdata_tot = True
+    mpdata_tot = False
 
     th_std0 = 289 * si.kelvins
     qv0 = 7.5 * si.grams / si.kilogram
